@@ -1,0 +1,16 @@
+{
+  "name": "sequelize-ejm",
+  "version": "1.0.0",
+  "description": "ejercicio con sequelize",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alfonso gomajoa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.28.0"
+  }
+}
