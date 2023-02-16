@@ -9,14 +9,11 @@ async function testUser() {
     }
 }
 
-async function createUser() {
-        const nuevo = User.build({
-            Nombre: 'Alfonso',
-            Apellido: 'Gomajoa',
-            Edad: 23
-        })
-        await nuevo.save()
-        console.log("guardando: ", nuevo)
+async function getAll(){
+    const usuarios = await User.findAll();
+    return usuarios
 }
 
-testUser()
+module.exports ={
+    getAll
+}
