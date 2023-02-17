@@ -63,7 +63,7 @@ async function deleteUser(nData){
     })
     return true
 }
-
+// todo: crear querys de user y querys de cuenta por separado luego unir con otro archivo para guardar cuentas segun el usuario
 testUser()
 testCuenta()
 
