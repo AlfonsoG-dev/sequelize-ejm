@@ -11,5 +11,12 @@ router.get('/Cuenta', async function(req, res){
     }
 })
 
+router.post('/crearCuenta', async function(req, res){
+    try{
+        res.json(await query.createCuenta(req.body))
+    }catch (err){
+        console.error(`error: ${err.message}`)
+    }
+})
 
 module.exports = router

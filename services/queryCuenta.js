@@ -18,5 +18,6 @@ async function createCuenta(nData){
 }
 
 module.exports = {
-    testCuenta
+    testCuenta,
+    createCuenta
 }
