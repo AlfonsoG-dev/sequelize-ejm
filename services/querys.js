@@ -1,21 +1,31 @@
-const User = require('../models/user')
+const myModel = require('../models/myModel')
+
 
 async function testUser() {
     try {
-        await User.sync({ alter: true })
-        console.log("Modificación de la tabla usuario")
+        await myModel.User.sync({ alter: true })
+        console.log("Inicialización tabla user")
     } catch (err) {
         console.error(`error: ${err.message}`)
     }
 }
 
+async function testCuenta(){
+    try{
+        await myModel.Cuenta.sync({ alter:true })
+        console.log(`Inicialización de la tabla cuenta`)
+    }catch (err){
+        console.error(`error: ${err.message}`)
+    }
+}
+
 async function getAll(){
-    const usuarios = await User.findAll();
+    const usuarios = await myModel.User.findAll();
     return usuarios
 }
 
 async function searchName(nNombre){
-    const buscado = await User.findAll({
+    const buscado = await myModel.User.findAll({
         where: {
             Nombre: nNombre
         }
@@ -24,7 +34,7 @@ async function searchName(nNombre){
 }
 
 async function createUser(nData){
-    const usuario = await User.create({
+    const usuario = await myModel.User.create({
         Nombre: nData.nombre,
         Apellido: nData.apellido,
         Edad: nData.edad
@@ -33,7 +43,7 @@ async function createUser(nData){
 }
 
 async function updateUser(nData){
-    const modificado = await User.update({
+    const modificado = await myModel.User.update({
         Nombre: nData.nombre,
         Apellido: nData.apellido, 
         Edad: nData.edad
@@ -46,7 +56,7 @@ async function updateUser(nData){
 }
 
 async function deleteUser(nData){
-    const eliminado = await User.destroy({
+    const eliminado = await myModel.User.destroy({
         where: {
             id: nData.id
         }
@@ -54,8 +64,10 @@ async function deleteUser(nData){
     return true
 }
 
+testUser()
+testCuenta()
+
 module.exports ={
-    testUser,
     getAll,
     createUser,
     updateUser,
