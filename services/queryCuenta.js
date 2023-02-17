@@ -10,9 +10,10 @@ async function testCuenta(){
 }
 async function createCuenta(nData){
     const nCuenta = await myModel.Cuenta.create({
-        usuario: nData.idUsuario,
+        cuenta: nData.cuenta,
         email: nData.email,
-        password: nData.password
+        password: nData.password,
+        UserId: nData.UserID
     })
     return nCuenta
 }

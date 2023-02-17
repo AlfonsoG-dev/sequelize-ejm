@@ -9,8 +9,8 @@ Cuenta.init({
         autoIncrement: true,
         primaryKey: true
     },
-    usuario: {
-        type: DataTypes.INTEGER,
+    cuenta: {
+        type: DataTypes.STRING,
     },
     email: {
         type: DataTypes.STRING
