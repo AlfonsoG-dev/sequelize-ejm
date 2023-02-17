@@ -27,7 +27,7 @@ async function deleteCuenta(nData){
     const eliminado = await myModel.Cuenta.destroy({
         id: nData.id
     })
-    return deleteCuenta
+    return eliminado
 }
 
 async function getRelation(){
