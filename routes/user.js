@@ -5,8 +5,16 @@ const router = express.Router()
 
 router.get('/', async function(req, res) {
     try{
-        const datos = res.json(await query.getAll())
+        var datos = await query.getAll()
         res.render('usuarios', {'datos': datos})
+    }catch (err){
+        console.error(`error: ${err.message}`)
+    }
+})
+
+router.post('/crearUsuario', async function(req, res){
+    try{
+        res.json(await query.createUser(req.body))
     }catch (err){
         console.error(`error: ${err.message}`)
     }
