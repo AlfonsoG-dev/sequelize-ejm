@@ -8,6 +8,11 @@ async function testCuenta(){
         console.error(`error: ${err.message}`)
     }
 }
+async function getCuentas(){
+    const cuentas = await myModel.Cuenta.findAll({ include: myModel.User })
+    return cuentas
+}
+
 async function createCuenta(nData){
     const nCuenta = await myModel.Cuenta.create({
         cuenta: nData.cuenta,
@@ -30,5 +35,6 @@ async function getRelation(){
 module.exports = {
     testCuenta,
     createCuenta,
-    getRelation
+    getRelation,
+    getCuentas
 }
