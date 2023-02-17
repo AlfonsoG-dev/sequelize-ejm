@@ -11,6 +11,7 @@
     <table>
         <thead>
             <tr>
+                <th>ID</th>
                 <th>nombre</th>
                 <th>apellido</th>
                 <th>edad</th>
@@ -19,6 +20,7 @@
         <tbody>
             <% datos.forEach(elemento => {%>
                 <tr>
+                    <td><%= elemento.id %></td>
                     <td><%= elemento.Nombre %></td>
                     <td><%= elemento.Apellido %></td>
                     <td><%= elemento.Edad %></td>

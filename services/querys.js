@@ -29,16 +29,29 @@ async function createUser(nData){
         Apellido: nData.apellido,
         Edad: nData.edad
     })
-    console.log(`id generado automaticamente para el usuario: ${nData.nombre} con id: ${usuario.id}`)
     let mensaje = "error crear usuaro"
-    if(searchName(nData.nombre)){
+    if(searchName(nData.nombre) > 0){
         mensaje = `usuario creado`
     }
     return {mensaje}
 }
 
+async function updateUser(nData){
+    const modificado = await User.update({
+        Nombre: nData.nombre,
+        Apellido: nData.apellido, 
+        Edad: nData.edad
+    },{
+        where: {
+            id: nData.id
+        }
+    })
+    return true
+}
+
 module.exports ={
     testUser,
     getAll,
-    createUser
+    createUser,
+    updateUser
 }
