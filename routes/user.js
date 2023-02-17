@@ -1,5 +1,5 @@
 const express = require('express')
-const query = require('../services/querys')
+const query = require('../services/querysUser')
 const router = express.Router()
 
 
