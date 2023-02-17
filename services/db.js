@@ -1,4 +1,4 @@
-const {Sequelize, TSVECTOR} = require('sequelize')
+const {Sequelize} = require('sequelize')
 const config = require('../config')
 
 const sequelize = new Sequelize(config.pool)
