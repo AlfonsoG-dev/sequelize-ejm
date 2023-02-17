@@ -22,6 +22,14 @@ async function createCuenta(nData){
     })
     return nCuenta
 }
+
+async function deleteCuenta(nData){
+    const eliminado = await myModel.Cuenta.destroy({
+        id: nData.id
+    })
+    return deleteCuenta
+}
+
 async function getRelation(){
     const relation = await myModel.Cuenta.create({
         cuenta: 'test1',
@@ -36,5 +44,6 @@ module.exports = {
     testCuenta,
     createCuenta,
     getRelation,
-    getCuentas
+    getCuentas,
+    deleteCuenta
 }

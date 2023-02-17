@@ -19,4 +19,12 @@ router.post('/crearCuenta', async function(req, res){
     }
 })
 
+router.delete('/eliminarCuenta', async function(req, res){
+    try{
+        res.json(await query.deleteCuenta(req.body))
+    }catch (err){
+        console.error(`error: ${err.message}`)
+    }
+})
+
 module.exports = router
