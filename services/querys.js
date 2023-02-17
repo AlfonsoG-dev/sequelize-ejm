@@ -29,11 +29,7 @@ async function createUser(nData){
         Apellido: nData.apellido,
         Edad: nData.edad
     })
-    let mensaje = "error crear usuaro"
-    if(searchName(nData.nombre) > 0){
-        mensaje = `usuario creado`
-    }
-    return {mensaje}
+    return true
 }
 
 async function updateUser(nData){
@@ -49,9 +45,19 @@ async function updateUser(nData){
     return true
 }
 
+async function deleteUser(nData){
+    const eliminado = await User.destroy({
+        where: {
+            id: nData.id
+        }
+    })
+    return true
+}
+
 module.exports ={
     testUser,
     getAll,
     createUser,
-    updateUser
+    updateUser,
+    deleteUser
 }

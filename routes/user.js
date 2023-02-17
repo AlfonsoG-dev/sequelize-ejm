@@ -28,4 +28,12 @@ router.put('/modificarUsuario', async function(req, res){
     }
 })
 
+router.delete('/eliminarUsuario', async function(req, res){
+    try{
+        res.json(await query.deleteUser(req.body))
+    }catch (err){
+        console.error(`error: ${err.message}`)
+    }
+})
+
 module.exports = router
