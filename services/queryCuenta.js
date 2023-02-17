@@ -17,7 +17,18 @@ async function createCuenta(nData){
     })
     return nCuenta
 }
+async function getRelation(){
+    const relation = await myModel.Cuenta.create({
+        cuenta: 'test1',
+        email: 'test@test1',
+        password: '12test1',
+        UserId: 2
+    })
+    console.log((await relation.getUser()).Nombre)
+    return relation
+}
 module.exports = {
     testCuenta,
-    createCuenta
+    createCuenta,
+    getRelation
 }

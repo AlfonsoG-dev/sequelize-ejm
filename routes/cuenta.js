@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/Cuenta', async function(req, res){
     try{
-        res.send(query.testCuenta())
+        res.json(await query.getRelation())
     }catch (err){
         console.error(`error: ${err.message}`)
     }
