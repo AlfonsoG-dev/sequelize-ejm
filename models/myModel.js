@@ -22,6 +22,7 @@ Cuenta.init({
     sequelize, modelName: 'Cuenta'
 })
 
+
 class User extends Model { }
 
 User.init({
@@ -44,6 +45,7 @@ User.init({
 });
 
 User.hasMany(Cuenta)
+Cuenta.belongsTo(User, { targetKey:'id', foreignKey: 'UserId'})
 
 module.exports = {
     User,

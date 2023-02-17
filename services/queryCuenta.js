@@ -17,7 +17,6 @@ async function createCuenta(nData){
     })
     return nCuenta
 }
-// todo: no funciona el ingreso de la foreign key
 module.exports = {
     testCuenta,
     createCuenta
