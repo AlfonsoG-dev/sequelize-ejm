@@ -10,15 +10,6 @@ async function testUser() {
     }
 }
 
-async function testCuenta(){
-    try{
-        await myModel.Cuenta.sync({ alter:true })
-        console.log(`Inicialización de la tabla cuenta`)
-    }catch (err){
-        console.error(`error: ${err.message}`)
-    }
-}
-
 async function getAll(){
     const usuarios = await myModel.User.findAll();
     return usuarios
@@ -63,9 +54,8 @@ async function deleteUser(nData){
     })
     return true
 }
-// todo: crear querys de user y querys de cuenta por separado luego unir con otro archivo para guardar cuentas segun el usuario
+
 testUser()
-testCuenta()
 
 module.exports ={
     getAll,
