@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./css/tabla.css">
 </head>
 <body>
+    <div>
+        <a href="#" class="btnRegistrar">Registrar</a>
+    </div>
+    <br>
     <table>
         <thead>
             <tr>
@@ -15,6 +19,7 @@
                 <th>nombre</th>
                 <th>apellido</th>
                 <th>edad</th>
+                <th>opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +29,7 @@
                     <td><%= elemento.Nombre %></td>
                     <td><%= elemento.Apellido %></td>
                     <td><%= elemento.Edad %></td>
+                    <td><a href="#" class="btnEliminar">Eliminar</a>-<a href="#" class="btnModificar">Modificar</a></td>
                 </tr>
             <% }) %>
         </tbody>
