@@ -3,15 +3,15 @@ const path = require('path')
 const app = express()
 
 
-const userRoutes = require('./routes/user')
-const cuentaRoutes = require('./routes/cuenta')
+const userRoutes = require('./src/routes/user')
+const cuentaRoutes = require('./src/routes/cuenta')
 
 
 app.set('port', 3000)
 
 app.set('view engine', 'ejs')
 
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, './src/views'))
 
 app.use(express.static('./public'))
 
