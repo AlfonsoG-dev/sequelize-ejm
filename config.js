@@ -1,9 +1,13 @@
+const dotenv = require('dotenv')
+dotenv.config();
+dotenv.load;
+
 const config = {
     pool: {
-        host: 'localhost',
-        username: 'root',
-        password: '5x5W12',
-        database: 'consulta',
+        host: process.env.DB_HOST,
+        username: process.env.DB_USER || 'root',
+        password: process.env.DB_PASS,
+        database: process.env.DB,
         max: 5,
         min: 1,
         idle: 60000,
