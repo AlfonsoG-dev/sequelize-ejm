@@ -17,18 +17,12 @@ app.use(express.static("./public"))
 
 app.use(express.json())
 
-app.use(express.urlencoded({extended: true}))
-
-
-
-
-
-
+app.use(express.urlencoded({ extended: true }))
 
 
 app.use(userRoutes)
 app.use(cuentaRoutes)
-
+app
 app.listen(app.get("port"), () => {
     console.log(`Puerto excucha en:  ${app.get("port")}`)
 })
